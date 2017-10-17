@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Payments - CTIs</title>
+		<meta name="description" content="CTIs" />
+		<meta name="keywords" content="finops, tt, tickets, CTI, CTIs, cti" />
+		<meta name="author" content="" />
+		<link rel="shortcut icon" href="">
+		
+		<!-- <link rel="stylesheet" type="text/css" href="css/normalize.css" /> -->
+		
+		<style>
+		article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}body{margin:0;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;margin:0.67em 0;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:bold;}dfn{font-style:italic;}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em;}pre{white-space:pre-wrap;}q{quotes:"\201C" "\201D" "\2018" "\2019";}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-0.5em;}sub{bottom:-0.25em;}img{border:0;}svg:not(:root){overflow:hidden;}figure{margin:0;}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em;}legend{border:0;padding:0;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,select{text-transform:none;}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;}button[disabled],html input[disabled]{cursor:default;}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none;}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}
+		</style>
+		
+		<!-- <link rel="stylesheet" type="text/css" href="css/demo.css" /> -->
+		
+		<style>
+		@import url(http://fonts.googleapis.com/css?family=Raleway:400,500,700);
+
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'codropsicons';
+	src:url('../fonts/codropsicons/codropsicons.eot');
+	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+}
+
+*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { content: ''; display: table; }
+.clearfix:after { clear: both; }
+
+body {
+	background: #e7ecea;
+	color: #74777b;
+	font-weight: 400;
+	font-size: 1em;
+	font-family: 'Raleway', Arial, sans-serif;
+}
+
+a {
+	color: #2CC185;
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover, a:focus {
+	color: #74777b;
+}
+
+.support {
+	display: none;
+	color: #ef5189;
+	text-align: left;
+	font-size: 1.5em;
+	max-width: 1200px;
+	margin: 1em auto 0;
+	padding: 0;
+}
+
+.no-flexbox .support {
+	display: block;
+}
+
+.hidden {
+	position: absolute;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	opacity: 0;
+}
+
+.container > section {
+	padding: 5em 0;
+	font-size: 1.25em;
+	min-height: 100%;
+}
+
+p {
+	text-align: center;
+	padding: 1em;
+}
+
+/* Header */
+.codrops-header {
+	padding: 7em 0 3em;
+	letter-spacing: -1px;
+}
+
+.codrops-header h1 {
+	max-width: 1200px;
+	margin: 0 auto;
+	font-weight: 800;
+	font-size: 5em;
+	line-height: 1;
+}
+
+.codrops-header h1 span {
+	display: block;
+	font-size: 50%;
+	font-weight: 400;
+	padding-top: 0.325em;
+	color: #bdc2c9;
+}
+
+/* To Navigation Style */
+.codrops-top {
+	width: 100%;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 0.69em;
+	line-height: 2.2;
+}
+
+.codrops-top a {
+	display: inline-block;
+	padding: 1em 2em;
+	text-decoration: none;
+	letter-spacing: 1px;
+}
+
+.codrops-top span.right {
+	float: right;
+}
+
+.codrops-top span.right a {
+	display: block;
+	float: left;
+}
+
+.codrops-icon:before {
+	margin: 0 4px;
+	text-transform: none;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-family: 'codropsicons';
+	line-height: 1;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+}
+
+.codrops-icon-drop:before {
+	content: "\e001";
+}
+
+.codrops-icon-prev:before {
+	content: "\e004";
+}
+
+/* Related demos */
+.related {
+	text-align: center;
+}
+
+.related > a {
+	width: calc(100% - 20px);
+	max-width: 340px;
+	border: 1px solid black;
+	border-color: initial;
+	display: inline-block;
+	text-align: center;
+	margin: 20px 10px;
+	padding: 25px;
+}
+
+.related a img {
+	max-width: 100%;
+	opacity: 0.8;
+}
+
+.related a:hover img,
+.related a:active img {
+	opacity: 1;
+}
+
+.related a h3 {
+	margin: 0;
+	padding: 0.5em 0 0.3em;
+	max-width: 300px;
+	text-align: left;
+}
+
+@media screen and (max-width: 1280px) {
+	.codrops-header h1 {
+		padding: 0 0.5em;
+	}
+	.support {
+		padding: 0 1.5em;
+	}
+}
+
+@media screen and (max-width: 30em) {
+	.container > section {
+		padding: 3em 0;
+	}
+	.codrops-header {
+		padding: 2em 0 1em;
+	}
+	.codrops-header h1 {
+		font-size: 3.5em;
+	}
+}
+
+
+@media screen and (max-width: 25em) {
+	.codrops-icon {
+		font-size: 1.5em;
+	}
+	.codrops-icon span {
+		display: none;
+	}
+}
+		</style>
+		
+		<!-- <link rel="stylesheet" type="text/css" href="css/tabs.css" /> -->
+		
+		<style>
+		/* Default tab style */
+
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'stroke7pixeden';
+	src:url('../fonts/stroke7pixeden/stroke7pixeden.eot?u58ytb');
+	src:url('../fonts/stroke7pixeden/stroke7pixeden.eot?#iefixu58ytb') format('embedded-opentype'),
+		url('../fonts/stroke7pixeden/stroke7pixeden.woff?u58ytb') format('woff'),
+		url('../fonts/stroke7pixeden/stroke7pixeden.ttf?u58ytb') format('truetype'),
+		url('../fonts/stroke7pixeden/stroke7pixeden.svg?u58ytb#stroke7pixeden') format('svg');
+}
+
+.tabs {
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+	width: 100%;
+	font-weight: 300;
+	font-size: 1.25em;
+}
+
+/* Nav */
+.tabs nav {
+	text-align: center;
+}
+
+.tabs nav ul {
+	position: relative;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: flex;
+	margin: 0 auto;
+	padding: 0;
+	max-width: 1200px;
+	list-style: none;
+	-ms-box-orient: horizontal;
+	-ms-box-pack: center;
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
+}
+
+.tabs nav ul li {
+	position: relative;
+	z-index: 1;
+	display: block;
+	margin: 0;
+	text-align: center;
+	-webkit-flex: 1;
+	-moz-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+
+.tabs nav a {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	line-height: 2.5;
+}
+
+.tabs nav a span {
+	vertical-align: middle;
+	font-size: 0.75em;
+}
+
+.tabs nav li.tab-current a {
+	color: #74777b;
+}
+
+.tabs nav a:focus {
+	outline: none;
+}
+
+/* Icons */
+.icon::before {
+	z-index: 10;
+	display: inline-block;
+	margin: 0 0.4em 0 0;
+	vertical-align: middle;
+	text-transform: none;
+	font-weight: normal;
+	font-variant: normal;
+	font-size: 1.3em;
+	font-family: 'stroke7pixeden';
+	line-height: 1;
+	speak: none;
+	-webkit-backface-visibility: hidden;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.icon-upload::before {
+	content: "\e68a";
+}
+.icon-tools::before {
+	content: "\e60a";
+}
+.icon-plane::before {
+	content: "\e625";
+}
+.icon-joy::before {
+	content: "\e6a4";
+}
+.icon-plug::before {
+	content: "\e69a";
+}
+.icon-home::before {
+	content: "\e648";
+}
+.icon-gift::before {
+	content: "\e652";
+}
+.icon-display::before {
+	content: "\e65e";
+}
+.icon-date::before {
+	content: "\e660";
+}
+.icon-config::before {
+	content: "\e666";
+}
+.icon-coffee::before {
+	content: "\e669";
+}
+.icon-camera::before {
+	content: "\e66f";
+}
+.icon-box::before {
+	content: "\e674";
+}
+
+/* Content */
+.content-wrap {
+	position: relative;
+}
+
+.content-wrap section {
+	display: none;
+	margin: 0 auto;
+	padding: 1em;
+	max-width: 1200px;
+	text-align: center;
+}
+
+.content-wrap section.content-current {
+	display: block;
+}
+
+.content-wrap section p {
+	margin: 0;
+	padding: 0.75em 0;
+	color: rgba(40,44,42,0.05);
+	font-weight: 900;
+	font-size: 4em;
+	line-height: 1;
+}
+
+/* Fallback */
+.no-js .content-wrap section {
+	display: block;
+	padding-bottom: 2em;
+	border-bottom: 1px solid rgba(255,255,255,0.6);
+}
+
+.no-flexbox nav ul {
+	display: block;
+}
+
+.no-flexbox nav ul li {
+	min-width: 15%;
+	display: inline-block;
+}
+
+@media screen and (max-width: 58em) {
+	.tabs nav a.icon span {
+		display: none;
+	}
+	.tabs nav a:before {
+		margin-right: 0;
+	}
+}
+		</style>
+		
+		<!-- <link rel="stylesheet" type="text/css" href="css/tabstyles.css" /> -->
+		
+		<style>
+		/* Individual tab styles */
+
+/*****************************/
+/* Bar */
+/*****************************/
+
+.tabs-style-bar nav {
+	background: rgba(40,44,42,0.05);
+}
+
+.tabs-style-bar nav ul {
+	border: 4px solid transparent;
+}
+
+.tabs-style-bar nav ul li a {
+	margin: 0 2px;
+	background-color: #f7f7f7;
+	color: #74777b;
+	transition: background-color 0.2s, color 0.2s;
+}
+
+.tabs-style-bar nav ul li a:hover,
+.tabs-style-bar nav ul li a:focus {
+	color: #2CC185;
+}
+
+.tabs-style-bar nav ul li a span {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 500;
+	font-size: 0.6em;
+}
+
+.tabs-style-bar nav ul li.tab-current a {
+	background: #2CC185;
+	color: #fff;
+}
+
+/*****************************/
+/* Icon box */
+/*****************************/
+
+.tabs-style-iconbox nav {
+	background: rgba(255,255,255,0.4);
+}
+
+.tabs-style-iconbox nav ul li a {
+	overflow: visible;
+	padding: 2em 0;
+	line-height: 1;
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+}
+
+.tabs-style-iconbox nav ul li a span {
+	font-weight: 700;
+	font-size: 0.7em;	
+}
+
+.tabs-style-iconbox nav ul li.tab-current {
+	z-index: 100;
+}
+
+.tabs-style-iconbox nav ul li.tab-current a {
+	background: #fff;
+	box-shadow: -1px 0 0 #fff;
+}
+
+.tabs-style-iconbox nav ul li.tab-current a::after {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -10px;
+	width: 0;
+	height: 0;
+	border: solid transparent;
+	border-width: 10px;
+	border-top-color: #fff;
+	content: '';
+	pointer-events: none;
+}
+
+.tabs-style-iconbox nav ul li:first-child::before,
+.tabs-style-iconbox nav ul li::after {
+	position: absolute;
+	top: 20%;
+	right: 0;
+	z-index: -1;
+	width: 1px;
+	height: 60%;
+	background: rgba(0,0,0,0.07);
+	content: '';
+}
+
+.tabs-style-iconbox nav ul li:first-child::before {
+	right: auto;
+	left: 0;
+}
+
+.tabs-style-iconbox .icon::before {
+	display: block;
+	margin: 0 0 0.25em 0;
+}
+
+/*****************************/
+/* Underline */
+/*****************************/
+
+.tabs-style-underline nav {
+	background: #fff;
+}
+
+.tabs-style-underline nav a {
+	padding: 0.25em 0 0.5em;
+	border-left: 1px solid #e7ecea;
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+}
+
+.tabs-style-underline nav li:last-child a {
+	border-right: 1px solid #e7ecea;
+}
+
+.tabs-style-underline nav li a::after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 6px;
+	background: #2CC185;
+	content: '';
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+	-webkit-transform: translate3d(0,150%,0);
+	transform: translate3d(0,150%,0);
+}
+
+.tabs-style-underline nav li.tab-current a::after {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.tabs-style-underline nav a span {
+	font-weight: 700;
+}
+
+/*****************************/
+/* Triangle and line */
+/*****************************/
+
+.tabs-style-linetriangle nav a {
+	overflow: visible;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+}
+
+.tabs-style-linetriangle nav a span {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 1em;
+}
+
+.tabs-style-linetriangle nav li.tab-current a:after, 
+.tabs-style-linetriangle nav li.tab-current a:before {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: solid transparent;
+	content: '';
+	pointer-events: none;
+}
+
+.tabs-style-linetriangle nav li.tab-current a:after {
+	margin-left: -10px;
+	border-width: 10px;
+	border-top-color: #e7ecea;
+}
+
+.tabs-style-linetriangle nav li.tab-current a:before {
+	margin-left: -11px;
+	border-width: 11px;
+	border-top-color: rgba(0,0,0,0.2);
+}
+
+@media screen and (max-width: 58em) {
+	.tabs-style-linetriangle nav {
+		font-size: 0.6em;
+	}
+}
+
+/*****************************/
+/* Top Line */
+/*****************************/
+
+.tabs-style-topline {
+	max-width: 1200px;
+}
+
+.tabs-style-topline nav li {
+	border: 1px solid rgba(40,44,42,0.1);
+}
+
+.tabs-style-topline nav li:not(:last-child) {
+	border-right: none;
+}
+
+.tabs-style-topline nav li.tab-current {
+	border-top-color: #2CC185;
+	border-bottom: none;
+}
+
+.tabs-style-topline nav a {
+	padding: 0.65em 0 0.5em;
+	background: rgba(40,44,42,0.05);
+	color: #74777b;
+	line-height: 1;
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+}
+
+.tabs-style-topline nav a:hover,
+.tabs-style-topline nav a:focus {
+	color: #2CC185;
+}
+
+.tabs-style-topline nav li.tab-current a {
+	background: none;
+	box-shadow: inset 0 3px 0 #2CC185;
+	color: #2CC185;
+}
+
+.tabs-style-topline .icon::before {
+	display: block;
+	margin: 0;
+}
+
+.tabs-style-topline nav a span {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	font-size: 0.5em;
+}
+
+/*****************************/
+/* Falling Icon, from http://vintageproductions.eu/grid/interactivity/ */ 
+/*****************************/
+
+.tabs-style-iconfall {
+	overflow: visible;
+}
+
+.tabs-style-iconfall nav a {
+	display: inline-block;
+	overflow: visible;
+	padding: 1em 0 2em;
+	color: #74777b;
+	line-height: 1;
+	-webkit-transition: color 0.3s cubic-bezier(0.7,0,0.3,1); 
+	transition: color 0.3s cubic-bezier(0.7,0,0.3,1);
+}
+
+.tabs-style-iconfall nav a:hover,
+.tabs-style-iconfall nav a:focus,
+.tabs-style-iconfall nav li.tab-current a {
+	color: #2CC185;
+}
+
+.tabs-style-iconfall nav a span {
+	font-weight: 700;
+}
+
+.tabs-style-iconfall nav li::before {
+	position: absolute;
+	bottom: 1em;
+	left: 50%;
+	margin-left: -20px;
+	width: 40px;
+	height: 4px;
+	background: #2CC185;
+	content: '';
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.2s ease-in;
+	transition: transform 0.2s ease-in;
+	-webkit-transform: scale3d(0,1,1);
+	transform: scale3d(0,1,1);
+}
+
+.tabs-style-iconfall nav li.tab-current::before {
+	opacity: 1;
+	-webkit-transform: scale3d(1,1,1);
+	transform: scale3d(1,1,1);
+}
+
+.tabs-style-iconfall .icon::before {
+	display: block;
+	margin: 0 0 0.35em;
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+	transition: transform 0.2s, opacity 0.2s;
+	-webkit-transform: translate3d(0,-100px,0);
+	transform: translate3d(0,-100px,0);
+	pointer-events: none;
+}
+
+.tabs-style-iconfall nav li.tab-current .icon::before {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+@media screen and (max-width: 58em) {
+	.tabs-style-iconfall nav li .icon::before {
+		opacity: 1;
+		-webkit-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
+}
+
+/*****************************/
+/* Moving Line */
+/*****************************/
+
+.tabs-style-linemove nav {
+	background: #fff;
+}
+
+.tabs-style-linemove nav li:last-child::before {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background: #2CC185;
+	content: '';
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+/* Move the line */
+.tabs-style-linemove nav li:first-child.tab-current ~ li:last-child::before {
+	-webkit-transform: translate3d(-400%,0,0);
+	transform: translate3d(-400%,0,0);
+}
+
+.tabs-style-linemove nav li:nth-child(2).tab-current ~ li:last-child::before {
+	-webkit-transform: translate3d(-300%,0,0);
+	transform: translate3d(-300%,0,0);
+}
+
+.tabs-style-linemove nav li:nth-child(3).tab-current ~ li:last-child::before {
+	-webkit-transform: translate3d(-200%,0,0);
+	transform: translate3d(-200%,0,0);
+}
+
+.tabs-style-linemove nav li:nth-child(4).tab-current ~ li:last-child::before {
+	-webkit-transform: translate3d(-100%,0,0);
+	transform: translate3d(-100%,0,0);
+}
+
+.tabs-style-linemove nav a {
+	padding: 1em 0;
+	color: #74777b;
+	line-height: 1;
+	-webkit-transition: color 0.3s, -webkit-transform 0.3s; 
+	transition: color 0.3s, transform 0.3s;
+}
+
+.tabs-style-linemove nav li.tab-current a {
+	color: #2CC185;
+	-webkit-transform: translate3d(0,8px,0);
+	transform: translate3d(0,8px,0);
+}
+
+.tabs-style-linemove nav a span {
+	font-weight: 700;
+}
+
+/*****************************/
+/* Line */
+/*****************************/
+
+.tabs-style-line nav ul {
+	padding: 0 2em;
+	max-width: none;
+	box-shadow: inset 0 -2px #d1d3d2;
+}
+
+.tabs-style-line nav a {
+	padding: 0.7em 0.4em;
+	box-shadow: inset 0 -2px #d1d3d2;
+	color: #74777b;
+	text-align: left;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	font-size: 0.8em;
+	line-height: 1;
+	-webkit-transition: color 0.3s, box-shadow 0.3s;
+	transition: color 0.3s, box-shadow 0.3s;
+}
+
+.tabs-style-line nav a:hover,
+.tabs-style-line nav a:focus {
+	box-shadow: inset 0 -2px #74777b;
+}
+
+.tabs-style-line nav li.tab-current a {
+	box-shadow: inset 0 -2px #2CC185;
+	color: #2CC185;
+}
+
+@media screen and (max-width: 58em) {
+	.tabs-style-line nav ul {
+		display: block;
+		box-shadow: none;
+	}
+	.tabs-style-line nav ul li {
+		display: block;
+		-webkit-flex: none;
+		flex: none;
+	}
+}
+
+/*****************************/
+/* Circle */
+/*****************************/
+
+.tabs-style-circle {
+	overflow: visible;
+}
+
+.tabs-style-circle nav li::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -60px 0 0 -60px;
+	width: 120px;
+	height: 120px;
+	border: 1px solid #2CC185;
+	border-radius: 50%;
+	content: '';
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+	transition: transform 0.2s, opacity 0.2s;
+	-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+}
+
+@media screen and (max-width: 58em) {
+	.tabs-style-circle nav li::before {
+		margin: -40px 0 0 -40px;
+		width: 80px;
+		height: 80px;
+	}
+}
+
+.tabs-style-circle nav li.tab-current::before {
+	opacity: 1;
+	-webkit-transform: scale3d(1,1,1);
+	transform: scale3d(1,1,1);
+}
+
+.tabs-style-circle nav a {
+	overflow: visible;
+	color: #74777b;
+	font-weight: 700;
+	font-size: 0.9em;
+	line-height: 1.1;
+	-webkit-transition: color 0.3s cubic-bezier(0.7,0,0.3,1); 
+	transition: color 0.3s cubic-bezier(0.7,0,0.3,1);
+}
+
+.tabs-style-circle nav a span {
+	display: inline-block;
+}
+
+.tabs-style-circle nav a span,
+.tabs-style-circle .icon::before {
+	-webkit-transition: -webkit-transform 0.3s cubic-bezier(0.7,0,0.3,1);
+	transition: transform 0.3s cubic-bezier(0.7,0,0.3,1);
+}
+
+.tabs-style-circle nav a:hover,
+.tabs-style-circle nav a:focus {
+	color: #4a4a4b;
+}
+
+.tabs-style-circle nav li.tab-current a {
+	color: #2CC185;
+}
+
+.tabs-style-circle nav li.tab-current a span {
+	-webkit-transform: translate3d(0,4px,0);
+	transform: translate3d(0,4px,0);
+}
+
+.tabs-style-circle .icon::before {
+	display: block;
+	margin: 0;
+	pointer-events: none;
+}
+
+.tabs-style-circle nav li.tab-current .icon::before {
+	-webkit-transform: translate3d(0,-4px,0);
+	transform: translate3d(0,-4px,0);
+}
+
+/*****************************/
+/* Shape */
+/*****************************/
+
+.tabs-style-shape {
+	max-width: 1200px;
+}
+
+.tabs-style-shape nav ul li {
+	margin: 0 3em;
+}
+
+.tabs-style-shape nav ul li:first-child {
+	margin-left: 0;
+}
+
+.tabs-style-shape nav ul li.tab-current {
+	z-index: 100;
+}
+
+.tabs-style-shape nav li a {
+	overflow: visible;
+	margin: 0 -3em 0 0;
+	padding: 0;
+	color: #fff;
+	font-weight: 500;
+}
+
+.tabs-style-shape nav li:first-child a span {
+	padding-left: 2em;
+	border-radius: 30px 0 0 0;
+}
+
+.tabs-style-shape nav li:last-child a span {
+	padding-right: 2em;
+	border-radius: 0 30px 0 0;
+}
+
+.tabs-style-shape nav li a svg {
+	position: absolute;
+	left: 100%;
+	margin: 0;
+	width: 3em;
+	height: 100%;
+	fill: #bdc2c9;
+}
+
+.tabs-style-shape nav li a svg:nth-child(2),
+.tabs-style-shape nav li:last-child a svg {
+	right: 100%;
+	left: auto;
+	-webkit-transform: scale3d(-1,1,1);
+	transform: scale3d(-1,1,1);
+}
+
+.tabs-style-shape nav li a span {
+	display: block;
+	overflow: hidden;
+	padding: 0.65em 0;
+	background-color: #bdc2c9;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.tabs-style-shape nav li a:hover span {
+	background-color: #2CC185;
+}
+
+.tabs-style-shape nav li a:hover svg {
+	fill: #2CC185;
+}
+
+/* Make only shape clickable */
+.tabs-style-shape nav li a svg {
+	pointer-events: none;
+}
+
+.tabs-style-shape nav li a svg use {
+	pointer-events: auto;
+}
+
+.tabs-style-shape nav li.tab-current a span,
+.tabs-style-shape nav li.tab-current a svg {
+	-webkit-transition: none;
+	transition: none;
+}
+
+.tabs-style-shape nav li.tab-current a span {
+	background: #fff;
+}
+
+.tabs-style-shape nav li.tab-current a svg {
+	fill: #fff;
+}
+
+.tabs-style-shape .content-wrap {
+	background: #fff;
+}
+
+@media screen and (max-width: 58em) {
+	.tabs-style-shape nav ul {
+		display: block;
+		padding-top: 1.5em;
+	}
+	.tabs-style-shape nav ul li {
+		display: block;
+		margin: -1.25em 0 0;
+		-webkit-flex: none;
+		flex: none;
+	}
+	.tabs-style-shape nav ul li a {
+		margin: 0;
+	}
+	.tabs-style-shape nav ul li svg {
+		display: none;
+	}
+	.tabs-style-shape nav ul li a span {
+		padding: 1.25em 0 2em !important;
+		border-radius: 30px 30px 0 0 !important;
+		box-shadow: 0 -1px 2px rgba(0,0,0,0.1);
+		line-height: 1;
+	}
+	.tabs-style-shape nav ul li:last-child a span {
+		padding: 1.25em 0 !important;
+	}
+	.tabs-style-shape nav ul li.tab-current {
+		z-index: 1;
+	}
+}
+
+/*****************************/
+/* Line Box */
+/*****************************/
+
+.tabs-style-linebox nav ul li {
+	margin: 0 0.5em;
+	-webkit-flex: none;
+	flex: none;
+}
+
+.tabs-style-linebox nav a {
+	padding: 0 1.5em;
+	color: #74777b;
+	font-weight: 700;
+	-webkit-transition: color 0.3s;
+	transition: color 0.3s;
+}
+
+.tabs-style-linebox nav a:hover,
+.tabs-style-linebox nav a:focus {
+	color: #2CC185;
+}
+
+.tabs-style-linebox nav li.tab-current a {
+	color: #fff;
+}
+
+.tabs-style-linebox nav a::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	background: #d2d8d6;
+	content: '';
+	-webkit-transition: background-color 0.3s, -webkit-transform 0.3s;
+	transition: background-color 0.3s, transform 0.3s;
+	-webkit-transition-timing-function: ease, cubic-bezier(0.7,0,0.3,1);
+	transition-timing-function: ease, cubic-bezier(0.7,0,0.3,1);
+	-webkit-transform: translate3d(0,100%,0) translate3d(0,-3px,0);
+	transform: translate3d(0,100%,0) translate3d(0,-3px,0);
+}
+
+.tabs-style-linebox nav li.tab-current a::after {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.tabs-style-linebox nav a:hover::after,
+.tabs-style-linebox nav a:focus::after,
+.tabs-style-linebox nav li.tab-current a::after {
+	background: #2CC185;
+}
+
+@media screen and (max-width: 58em) {
+	.tabs-style-linebox nav ul {
+		display: block;
+		box-shadow: none;
+	}
+	.tabs-style-linebox nav ul li {
+		display: block;
+		-webkit-flex: none;
+		flex: none;
+	}
+}
+
+/*****************************/
+/* Flip */
+/*****************************/
+
+.tabs-style-flip {
+	max-width: 1200px;
+}
+
+.tabs-style-flip nav a {
+	padding: 0.5em 0;
+	color: #2CC185;
+	-webkit-transition: color 0.3s;
+	transition: color 0.3s;
+}
+
+.tabs-style-flip nav a:hover,
+.tabs-style-flip nav a:focus,
+.tabs-style-flip nav li.tab-current a {
+	color: #74777b;
+}
+
+.tabs-style-flip nav a span {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	font-size: 0.625em;
+}
+
+.tabs-style-flip nav a::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	background-color: #f0f0f0;
+	content: '';
+	-webkit-transition: -webkit-transform 0.3s, background-color 0.3s;
+	transition: transform 0.3s, background-color 0.3s;
+	-webkit-transform: perspective(900px) rotate3d(1,0,0,90deg);
+	transform: perspective(900px) rotate3d(1,0,0,90deg);
+	-webkit-transform-origin: 50% 100%;
+	transform-origin: 50% 100%;
+	-webkit-perspective-origin: 50% 100%;
+	perspective-origin: 50% 100%;
+}
+
+.tabs-style-flip nav li.tab-current a::after {
+	background-color: #fff;
+	-webkit-transform: perspective(900px) rotate3d(1,0,0,0deg);
+	transform: perspective(900px) rotate3d(1,0,0,0deg);
+}
+
+.tabs-style-flip .content-wrap {
+	background: #fff;
+}
+
+
+/*****************************/
+/* Fill up */
+/*****************************/
+
+.tabs-style-fillup nav ul li a {
+	padding: 1.9em 0;
+	border-right: 1px solid #2CC185;
+	line-height: 1;
+	-webkit-transition: color 0.3s;
+	transition: color 0.3s;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.tabs-style-fillup nav ul li:last-child a {
+	border: none;
+}
+
+.tabs-style-fillup nav ul li.tab-current {
+	z-index: 100;
+}
+
+.tabs-style-fillup nav ul li.tab-current a {
+	color: #fff;
+}
+
+.tabs-style-fillup nav ul li a::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	height: calc(100% + 1px);
+	border: 1px solid #2CC185;
+	background: #2CC185;
+	content: '';
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+	-webkit-transform: translate3d(0,100%,0);
+	transform: translate3d(0,100%,0);
+}
+
+.tabs-style-fillup nav ul li.tab-current a::after {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.tabs-style-fillup nav ul li a span,
+.tabs-style-fillup .icon::before {
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	-webkit-transform: translate3d(0,5px,0);
+	transform: translate3d(0,5px,0);
+}
+
+.tabs-style-fillup nav ul li a span {
+	display: block;
+	font-weight: 700;
+	font-size: 0.7em;
+	line-height: 1.5;
+}
+
+.tabs-style-fillup .icon::before {
+	display: block;
+	margin: 0;
+}
+
+.tabs-style-fillup nav ul li.tab-current a span,
+.tabs-style-fillup li.tab-current .icon::before {
+	-webkit-transform: translate3d(0,-10px,0);
+	transform: translate3d(0,-10px,0);
+}
+
+
+/*****************************/
+/* Trapezoid, based on http://lea.verou.me/2013/10/slanted-tabs-with-css-3d-transforms/ */
+/*****************************/ 
+
+.tabs-style-tzoid {
+	max-width: 1200px;
+}
+
+.tabs-style-tzoid nav {
+	padding: 0 1em;
+}
+
+.tabs-style-tzoid nav ul li {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.tabs-style-tzoid nav ul li a {
+	padding: 0 1.5em 0 0.3em;
+	color: #0d9564;
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+}
+
+@media screen and (max-width: 54em) {
+	.tabs-style-tzoid nav ul li a {
+		padding: 0 0.5em 0 0.3em;
+	}
+}
+
+.tabs-style-tzoid nav ul li a:hover,
+.tabs-style-tzoid nav ul li a:focus {
+	color: #fff;
+}
+
+.tabs-style-tzoid nav ul li.tab-current a,
+.tabs-style-tzoid nav ul li.tab-current a:hover {
+	color: #2CC185;
+}
+
+.tabs-style-tzoid nav ul li a span {
+	font-weight: 500;
+	font-size: 0.75em;
+}
+
+.tabs-style-tzoid nav ul li a::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	outline: 1px solid transparent;
+	border-radius: 10px 10px 0 0;
+	background: #2CC185;
+	box-shadow: inset 0 -3px 3px rgba(0,0,0,0.05);
+	content: '';
+	-webkit-transform: perspective(5px) rotateX(0.93deg) translateZ(-1px);
+	transform: perspective(5px) rotateX(0.93deg) translateZ(-1px);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.tabs-style-tzoid nav ul li.tab-current a::after,
+.tabs-style-tzoid .content-wrap {
+	background: #fff;
+	box-shadow: none;
+}
+
+/*****************************/
+/* Circle fill */
+/*****************************/
+
+.tabs-style-circlefill {
+	max-width: 700px;
+	border: 1px solid #2CC185;
+}
+
+.tabs-style-circlefill nav ul li {
+	overflow: hidden;
+	border-right: 1px solid #2CC185;
+}
+
+.tabs-style-circlefill nav li a {
+	padding: 1.5em 0;
+	color: #fff;
+	font-size: 1.25em;
+}
+
+.tabs-style-circlefill nav li:first-child {
+	border-left: none;
+}
+
+.tabs-style-circlefill nav li:last-child {
+	border: none;
+}
+
+.tabs-style-circlefill nav li::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -40px 0 0 -40px;
+	width: 80px;
+	height: 80px;
+	border: 1px solid #2CC185;
+	border-radius: 50%;
+	background: #2CC185;
+	content: '';
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.tabs-style-circlefill nav li.tab-current::before {
+	-webkit-transform: scale3d(2.5,2.5,1);
+	transform: scale3d(2.5,2.5,1);
+}
+
+.tabs-style-circlefill nav a {
+	-webkit-transition: color 0.3s; 
+	transition: color 0.3s;
+}
+
+.tabs-style-circlefill nav a span {
+	display: none;
+}
+
+.tabs-style-circlefill nav li.tab-current a {
+	color: #fff;
+}
+
+.tabs-style-circlefill .icon::before {
+	display: block;
+	margin: 0;
+	pointer-events: none;
+}
+
+.tabs-style-circlefill .content-wrap {
+	border-top: 1px solid #2CC185;
+}
+		</style>
+		
+		
+		
+		
+		
+  		<script><!-- src="js/modernizr.custom.js"-->
+		/* Modernizr 2.8.3 (Custom Build) | MIT & BSD
+ * Build: http://modernizr.com/download/#-flexbox-flexboxlegacy-shiv-cssclasses-testprop-testallprops-domprefixes-load
+ */
+;window.Modernizr=function(a,b,c){function x(a){j.cssText=a}function y(a,b){return x(prefixes.join(a+";")+(b||""))}function z(a,b){return typeof a===b}function A(a,b){return!!~(""+a).indexOf(b)}function B(a,b){for(var d in a){var e=a[d];if(!A(e,"-")&&j[e]!==c)return b=="pfx"?e:!0}return!1}function C(a,b,d){for(var e in a){var f=b[a[e]];if(f!==c)return d===!1?a[e]:z(f,"function")?f.bind(d||b):f}return!1}function D(a,b,c){var d=a.charAt(0).toUpperCase()+a.slice(1),e=(a+" "+n.join(d+" ")+d).split(" ");return z(b,"string")||z(b,"undefined")?B(e,b):(e=(a+" "+o.join(d+" ")+d).split(" "),C(e,b,c))}var d="2.8.3",e={},f=!0,g=b.documentElement,h="modernizr",i=b.createElement(h),j=i.style,k,l={}.toString,m="Webkit Moz O ms",n=m.split(" "),o=m.toLowerCase().split(" "),p={},q={},r={},s=[],t=s.slice,u,v={}.hasOwnProperty,w;!z(v,"undefined")&&!z(v.call,"undefined")?w=function(a,b){return v.call(a,b)}:w=function(a,b){return b in a&&z(a.constructor.prototype[b],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(b){var c=this;if(typeof c!="function")throw new TypeError;var d=t.call(arguments,1),e=function(){if(this instanceof e){var a=function(){};a.prototype=c.prototype;var f=new a,g=c.apply(f,d.concat(t.call(arguments)));return Object(g)===g?g:f}return c.apply(b,d.concat(t.call(arguments)))};return e}),p.flexbox=function(){return D("flexWrap")},p.flexboxlegacy=function(){return D("boxDirection")};for(var E in p)w(p,E)&&(u=E.toLowerCase(),e[u]=p[E](),s.push((e[u]?"":"no-")+u));return e.addTest=function(a,b){if(typeof a=="object")for(var d in a)w(a,d)&&e.addTest(d,a[d]);else{a=a.toLowerCase();if(e[a]!==c)return e;b=typeof b=="function"?b():b,typeof f!="undefined"&&f&&(g.className+=" "+(b?"":"no-")+a),e[a]=b}return e},x(""),i=k=null,function(a,b){function l(a,b){var c=a.createElement("p"),d=a.getElementsByTagName("head")[0]||a.documentElement;return c.innerHTML="x<style>"+b+"</style>",d.insertBefore(c.lastChild,d.firstChild)}function m(){var a=s.elements;return typeof a=="string"?a.split(" "):a}function n(a){var b=j[a[h]];return b||(b={},i++,a[h]=i,j[i]=b),b}function o(a,c,d){c||(c=b);if(k)return c.createElement(a);d||(d=n(c));var g;return d.cache[a]?g=d.cache[a].cloneNode():f.test(a)?g=(d.cache[a]=d.createElem(a)).cloneNode():g=d.createElem(a),g.canHaveChildren&&!e.test(a)&&!g.tagUrn?d.frag.appendChild(g):g}function p(a,c){a||(a=b);if(k)return a.createDocumentFragment();c=c||n(a);var d=c.frag.cloneNode(),e=0,f=m(),g=f.length;for(;e<g;e++)d.createElement(f[e]);return d}function q(a,b){b.cache||(b.cache={},b.createElem=a.createElement,b.createFrag=a.createDocumentFragment,b.frag=b.createFrag()),a.createElement=function(c){return s.shivMethods?o(c,a,b):b.createElem(c)},a.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+m().join().replace(/[\w\-]+/g,function(a){return b.createElem(a),b.frag.createElement(a),'c("'+a+'")'})+");return n}")(s,b.frag)}function r(a){a||(a=b);var c=n(a);return s.shivCSS&&!g&&!c.hasCSS&&(c.hasCSS=!!l(a,"article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")),k||q(a,c),a}var c="3.7.0",d=a.html5||{},e=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,f=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,g,h="_html5shiv",i=0,j={},k;(function(){try{var a=b.createElement("a");a.innerHTML="<xyz></xyz>",g="hidden"in a,k=a.childNodes.length==1||function(){b.createElement("a");var a=b.createDocumentFragment();return typeof a.cloneNode=="undefined"||typeof a.createDocumentFragment=="undefined"||typeof a.createElement=="undefined"}()}catch(c){g=!0,k=!0}})();var s={elements:d.elements||"abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video",version:c,shivCSS:d.shivCSS!==!1,supportsUnknownElements:k,shivMethods:d.shivMethods!==!1,type:"default",shivDocument:r,createElement:o,createDocumentFragment:p};a.html5=s,r(b)}(this,b),e._version=d,e._domPrefixes=o,e._cssomPrefixes=n,e.testProp=function(a){return B([a])},e.testAllProps=D,g.className=g.className.replace(/(^|\s)no-js(\s|$)/,"$1$2")+(f?" js "+s.join(" "):""),e}(this,this.document),function(a,b,c){function d(a){return"[object Function]"==o.call(a)}function e(a){return"string"==typeof a}function f(){}function g(a){return!a||"loaded"==a||"complete"==a||"uninitialized"==a}function h(){var a=p.shift();q=1,a?a.t?m(function(){("c"==a.t?B.injectCss:B.injectJs)(a.s,0,a.a,a.x,a.e,1)},0):(a(),h()):q=0}function i(a,c,d,e,f,i,j){function k(b){if(!o&&g(l.readyState)&&(u.r=o=1,!q&&h(),l.onload=l.onreadystatechange=null,b)){"img"!=a&&m(function(){t.removeChild(l)},50);for(var d in y[c])y[c].hasOwnProperty(d)&&y[c][d].onload()}}var j=j||B.errorTimeout,l=b.createElement(a),o=0,r=0,u={t:d,s:c,e:f,a:i,x:j};1===y[c]&&(r=1,y[c]=[]),"object"==a?l.data=c:(l.src=c,l.type=a),l.width=l.height="0",l.onerror=l.onload=l.onreadystatechange=function(){k.call(this,r)},p.splice(e,0,u),"img"!=a&&(r||2===y[c]?(t.insertBefore(l,s?null:n),m(k,j)):y[c].push(l))}function j(a,b,c,d,f){return q=0,b=b||"j",e(a)?i("c"==b?v:u,a,b,this.i++,c,d,f):(p.splice(this.i++,0,a),1==p.length&&h()),this}function k(){var a=B;return a.loader={load:j,i:0},a}var l=b.documentElement,m=a.setTimeout,n=b.getElementsByTagName("script")[0],o={}.toString,p=[],q=0,r="MozAppearance"in l.style,s=r&&!!b.createRange().compareNode,t=s?l:n.parentNode,l=a.opera&&"[object Opera]"==o.call(a.opera),l=!!b.attachEvent&&!l,u=r?"object":l?"script":"img",v=l?"script":u,w=Array.isArray||function(a){return"[object Array]"==o.call(a)},x=[],y={},z={timeout:function(a,b){return b.length&&(a.timeout=b[0]),a}},A,B;B=function(a){function b(a){var a=a.split("!"),b=x.length,c=a.pop(),d=a.length,c={url:c,origUrl:c,prefixes:a},e,f,g;for(f=0;f<d;f++)g=a[f].split("="),(e=z[g.shift()])&&(c=e(c,g));for(f=0;f<b;f++)c=x[f](c);return c}function g(a,e,f,g,h){var i=b(a),j=i.autoCallback;i.url.split(".").pop().split("?").shift(),i.bypass||(e&&(e=d(e)?e:e[a]||e[g]||e[a.split("/").pop().split("?")[0]]),i.instead?i.instead(a,e,f,g,h):(y[i.url]?i.noexec=!0:y[i.url]=1,f.load(i.url,i.forceCSS||!i.forceJS&&"css"==i.url.split(".").pop().split("?").shift()?"c":c,i.noexec,i.attrs,i.timeout),(d(e)||d(j))&&f.load(function(){k(),e&&e(i.origUrl,h,g),j&&j(i.origUrl,h,g),y[i.url]=2})))}function h(a,b){function c(a,c){if(a){if(e(a))c||(j=function(){var a=[].slice.call(arguments);k.apply(this,a),l()}),g(a,j,b,0,h);else if(Object(a)===a)for(n in m=function(){var b=0,c;for(c in a)a.hasOwnProperty(c)&&b++;return b}(),a)a.hasOwnProperty(n)&&(!c&&!--m&&(d(j)?j=function(){var a=[].slice.call(arguments);k.apply(this,a),l()}:j[n]=function(a){return function(){var b=[].slice.call(arguments);a&&a.apply(this,b),l()}}(k[n])),g(a[n],j,b,n,h))}else!c&&l()}var h=!!a.test,i=a.load||a.both,j=a.callback||f,k=j,l=a.complete||f,m,n;c(h?a.yep:a.nope,!!i),i&&c(i)}var i,j,l=this.yepnope.loader;if(e(a))g(a,0,l,0);else if(w(a))for(i=0;i<a.length;i++)j=a[i],e(j)?g(j,0,l,0):w(j)?B(j):Object(j)===j&&h(j,l);else Object(a)===a&&h(a,l)},B.addPrefix=function(a,b){z[a]=b},B.addFilter=function(a){x.push(a)},B.errorTimeout=1e4,null==b.readyState&&b.addEventListener&&(b.readyState="loading",b.addEventListener("DOMContentLoaded",A=function(){b.removeEventListener("DOMContentLoaded",A,0),b.readyState="complete"},0)),a.yepnope=k(),a.yepnope.executeStack=h,a.yepnope.injectJs=function(a,c,d,e,i,j){var k=b.createElement("script"),l,o,e=e||B.errorTimeout;k.src=a;for(o in d)k.setAttribute(o,d[o]);c=j?h:c||f,k.onreadystatechange=k.onload=function(){!l&&g(k.readyState)&&(l=1,c(),k.onload=k.onreadystatechange=null)},m(function(){l||(l=1,c(1))},e),i?k.onload():n.parentNode.insertBefore(k,n)},a.yepnope.injectCss=function(a,c,d,e,g,i){var e=b.createElement("link"),j,c=i?h:c||f;e.href=a,e.rel="stylesheet",e.type="text/css";for(j in d)e.setAttribute(j,d[j]);g||(n.parentNode.insertBefore(e,n),m(c,0))}}(this,document),Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0))};
+		
+		</script>
+	</head>
+	<body>
+	<!-- <style> -->
+	<!-- body  -->
+			<!-- { -->
+			<!-- background-image: url("white.jpg"); -->
+			<!-- background-color: #000000; -->
+			<!-- } -->
+	<!-- </style> -->
+
+		<div class="container">
+			<section>
+			
+			<!-- <center><img src="dragon.png" alt=" " style="margin-left: -400px; margin-top : -70px; "></center> -->
+			<div style = "margin-top : -80px;"><h1><center><font color="red">Team Dracarys</font></center></h1></div>
+			
+			<div style = "margin-top : -30px;"><center><h5>Some goals are so worthy, it’s glorious even to fail!</h5></center></div>
+			
+			<center>Payments CTIs - beta<center>
+			<br>
+			<!-- We go forward. Only forward -->
+				
+				
+				
+				<div class="tabs tabs-style-flip" style ="opacity: 0.6">
+					<nav>
+						<ul>
+							<li><a href="#section-flip-1"><span><font color="red">VSP</font></span></a></li>
+							<li><a href="#section-flip-2"><span><font color="red">Dropship</font></span></a></li>							
+							<li><a href="#section-flip-3"><span><font color="red">Others</font></span></a></li>
+							<li><a href="#section-flip-4"><span><font color = "red"> Urgent</font> </span></a></li> 
+							<li><a href="#section-flip-5"><span><font color="red">Returns & Provisions</font></span></a></li>
+							<!-- <li><a href="#section-flip-6"><span>PO</span></a></li> -->
+							<!-- <li><a href="#section-flip-7"><span>Tech Issue</span></a></li> -->
+							
+						</ul>
+					</nav>
+					<div class="content-wrap">
+			
+
+			<section id="section-flip-1"> <!-- VSP -->
+						
+							<a href ="https://tt.amazon.com/new?ticket_type=Regular+Ticket&prev_qid=0&impact=5&cti-finder-type=keyword&category=Vendor+Success+Program&type=PPV%2FPQV&item=Shortage+Claims&assigned_group=PQV-VSP-RESOLVER-GROUP&assigned_individual=vrth&country=India&bldg=HYD10&problem_location=Hyderabad%40%40%40HYD10-CorpOffice(Hyd-Divyasree&case_type=Trouble+Ticket&quicklink_creator=mmandapa&add_perm='yuvai'&short_description=%5Bcase+ID%5D%5BPayee+code%5D%5Bsubject%5D&details=Paragon+Case+ID%23%3A%0D%0AProduct+line+name%3A+%0D%0AVendor+Name%3A+%0D%0AVendor+Group+ID%3A+%0D%0AVendor's+Vendor+Central+Account+Name%3A%0D%0AName+of+Vendor+Manager+the+Vendor+has+been+working+with%3A+%0D%0AVendor+Code's'%3A%0D%0AASIN's'%3A+%0D%0APO+Number%3A%0D%0ADescription+of+Vendor+Issue%3A%0D%0AResearch+conducted+to+date%3A+%0D%0AURL+for+SOP%3A+%0D%0ARecommendation+from+associate%3A+%0D%0A" target="_blank">
+								<font color="black"><span>PPV & Shortage Claims</span></font>
+							</a>
+							<br><br>
+							
+							<a href = "https://tt.amazon.com/new?ticket_type=Regular+Ticket&prev_qid=0&impact=5&cti-finder-type=keyword&category=Retail+Systems&type=RBS&item=VSP_Compliance_Support&assigned_group=VSRs&assigned_individual=yuvai&country=India&bldg=HYD10&problem_location=Hyderabad%40%40%40HYD10-CorpOffice(Hyd-Divyasree&case_type=Trouble+Ticket&quicklink_creator=mmandapa&short_description=%5Bcase+ID%5D%5BPayee+code%5D%5Bsubject%5D&details=Paragon+Case+ID%23%3A%0D%0AProduct+line+name%3A+%0D%0AVendor+Name%3A+%0D%0AVendor+Group+ID%3A+%0D%0AVendor's+Vendor+Central+Account+Name%3A%0D%0AName+of+Vendor+Manager+the+Vendor+has+been+working+with%3A+%0D%0AVendor+Code's'%3A%0D%0AASIN's'%3A+%0D%0APO+Number%3A%0D%0ADescription+of+Vendor+Issue%3A%0D%0AResearch+conducted+to+date%3A+%0D%0AURL+for+SOP%3A+%0D%0ARecommendation+from+associate%3A+%0D%0A" target="_blank">
+									<font color="black"><span>  Return inventory process on Hazmat/Compliance/Safety</span></font>
+							</a>
+							<br><br>
+							
+							<a href = "https://tt.amazon.com/new?ticket_type=Regular+Ticket&prev_qid=0&impact=5&cti-finder-type=keyword&category=Vendor+Success+Program&type=COOP+Defects&item=Vendor+Dispute&assigned_group=VSP-COOP-Defects&assigned_individual=us-vsp-coop-defects&country=India&bldg=HYD10&problem_location=Hyderabad%40%40%40HYD10-CorpOffice(Hyd-Divyasree&case_type=Trouble+Ticket&quicklink_creator=mmandapa&add_perm='yuvai'&short_description=%5Bcase+ID%5D%5BPayee+code%5D%5Bsubject%5D&details=Paragon+Case+ID%23%3A%0D%0AProduct+line+name%3A+%0D%0AVendor+Name%3A+%0D%0AVendor+Group+ID%3A+%0D%0AVendor's+Vendor+Central+Account+Name%3A%0D%0AName+of+Vendor+Manager+the+Vendor+has+been+working+with%3A+%0D%0AVendor+Code's'%3A%0D%0AASIN's'%3A+%0D%0APO+Number%3A%0D%0ADescription+of+Vendor+Issue%3A%0D%0AResearch+conducted+to+date%3A+%0D%0AURL+for+SOP%3A+%0D%0ARecommendation+from+associate%3A+%0D%0A" target="_blank">
+									<font color="black"><span> COOP disputes </span></font>
+							</a>
+							<br><br>
+							
+							<a href = "https://tt.amazon.com/new?ticket_type=Regular+Ticket&prev_qid=0&impact=5&cti-finder-type=keyword&category=Vendor+Success+Program&type=Vendor_Attrition&item=VSP_VCM_attrition&assigned_group=VCM-VSP-VA&assigned_individual=gunaseve&country=India&bldg=HYD10&problem_location=Hyderabad%40%40%40HYD10-CorpOffice(Hyd-Divyasree&case_type=Trouble+Ticket&quicklink_creator=mmandapa&add_perm='yuvai'&short_description=%5Bcase+ID%5D%5BPayee+code%5D%5Bsubject%5D&details=Paragon+Case+ID%23%3A%0D%0AProduct+line+name%3A+%0D%0AVendor+Name%3A+%0D%0AVendor+Group+ID%3A+%0D%0AVendor's+Vendor+Central+Account+Name%3A%0D%0AName+of+Vendor+Manager+the+Vendor+has+been+working+with%3A+%0D%0AVendor+Code's'%3A%0D%0AASIN's'%3A+%0D%0APO+Number%3A%0D%0ADescription+of+Vendor+Issue%3A%0D%0AResearch+conducted+to+date%3A+%0D%0AURL+for+SOP%3A+%0D%0ARecommendation+from+associate%3A+%0D%0A" target="_blank">
+									<font color="black"><span>  Account closures </span></font>
+							</a>
+							<br><br>
+							
+							<a href = "https://tt.amazon.com/new?ticket_type=Regular+Ticket&prev_qid=0&impact=5&cti-finder-type=keyword&category=RBS&type=Vendor+Succes+Program&item=VSR&assigned_group=ISS+-+VSP&assigned_individual=venramak&country=India&bldg=HYD10&problem_location=Hyderabad%40%40%40HYD10-CorpOffice(Hyd-Divyasree&case_type=Trouble+Ticket&quicklink_creator=mmandapa&add_perm='yuvai'&short_description=%5Bcase+ID%5D%5BPayee+code%5D%5Bsubject%5D&details=Paragon+Case+ID%23%3A%0D%0AProduct+line+name%3A+%0D%0AVendor+Name%3A+%0D%0AVendor+Group+ID%3A+%0D%0AVendor's+Vendor+Central+Account+Name%3A%0D%0AName+of+Vendor+Manager+the+Vendor+has+been+working+with%3A+%0D%0AVendor+Code's'%3A%0D%0AASIN's'%3A+%0D%0APO+Number%3A%0D%0ADescription+of+Vendor+Issue%3A%0D%0AResearch+conducted+to+date%3A+%0D%0AURL+for+SOP%3A+%0D%0ARecommendation+from+associate%3A+%0D%0A" target="_blank">
+									<font color="black"><span> Inbound support issues for VSP vendors  </span></font>
+							</a>
+							<br><br>
+							
+							<a href = "https://tt.amazon.com/new?ticket_type=Regular+Ticket&prev_qid=0&impact=5&cti-finder-type=keyword&category=Vendor+Success+Program&type=Approvals&item=Supplier+Contract+System+(SCS)&assigned_group=VSP-APPROVALS&assigned_individual=azosher&country=India&bldg=HYD10&problem_location=Hyderabad%40%40%40HYD10-CorpOffice(Hyd-Divyasree&case_type=Trouble+Ticket&quicklink_creator=mmandapa&add_perm='yuvai'&short_description=%5Bcase+ID%5D%5BPayee+code%5D%5Bsubject%5D&details=Paragon+Case+ID%23%3A%0D%0AProduct+line+name%3A+%0D%0AVendor+Name%3A+%0D%0AVendor+Group+ID%3A+%0D%0AVendor's+Vendor+Central+Account+Name%3A%0D%0AName+of+Vendor+Manager+the+Vendor+has+been+working+with%3A+%0D%0AVendor+Code's'%3A%0D%0AASIN's'%3A+%0D%0APO+Number%3A%0D%0ADescription+of+Vendor+Issue%3A%0D%0AResearch+conducted+to+date%3A+%0D%0AURL+for+SOP%3A+%0D%0ARecommendation+from+associate%3A+%0D%0A" target="_blank">
+									<font color="black"><span> Vendor's Contracts including agreement disposal  </span></font>
+							</a>
+							<br><br>
+						
+							<a href = "https://tt.amazon.com/new?ticket_type=Regular+Ticket&prev_qid=0&impact=5&cti-finder-type=keyword&category=Vendor+Success+Program&type=COOP+Defects&item=Missing+COOP&assigned_group=VSP-COOP-Defects&assigned_individual=us-vsp-coop-defects&country=India&bldg=HYD10&problem_location=Hyderabad%40%40%40HYD10-CorpOffice(Hyd-Divyasree&case_type=Trouble+Ticket&quicklink_creator=mmandapa&add_perm='yuvai'&short_description=%5Bcase+ID%5D%5BPayee+code%5D%5Bsubject%5D&details=Paragon+Case+ID%23%3A%0D%0AProduct+line+name%3A+%0D%0AVendor+Name%3A+%0D%0AVendor+Group+ID%3A+%0D%0AVendor's+Vendor+Central+Account+Name%3A%0D%0AName+of+Vendor+Manager+the+Vendor+has+been+working+with%3A+%0D%0AVendor+Code's'%3A%0D%0AASIN's'%3A+%0D%0APO+Number%3A%0D%0ADescription+of+Vendor+Issue%3A%0D%0AResearch+conducted+to+date%3A+%0D%0AURL+for+SOP%3A+%0D%0ARecommendation+from+associate%3A+%0D%0A" target="_blank">
+									<font color="black"><span> Missed/Unsigned COOP workflow  </span></font>
+							</a>	
+			
+			</section>
+						
+						
+			<section id="section-flip-2"><!-- Dropship -->
+						 
+							<a href = "https://tt.amazon.com/new?ticket_type=Secure+Ticket&prev_qid=0&impact=5&cti-finder-type=keyword&category=FinOps+Tech&type=FinOps+Central&item=Invoice+Creation&assigned_group=FinOps-Central-Dev&assigned_individual=GFS-VendorPaymentsDev-notify&sensitive=on&country=India&bldg=HYD15&problem_location=Hyderabad%40%40%40HYD15+-+Corp+Office(Hyderabad)&case_type=Trouble+Ticket&quicklink_creator=mmandapa&short_description=%5Bcase+ID%5D%5BPayee+code%5D%5Bsubject%5D&details=Paragon+Case+ID%23%3A%0D%0AProduct+line+name%3A+%0D%0AVendor+Name%3A+%0D%0AVendor+Group+ID%3A+%0D%0AVendor's+Vendor+Central+Account+Name%3A%0D%0AName+of+Vendor+Manager+the+Vendor+has+been+working+with%3A+%0D%0AVendor+Code's'%3A%0D%0AASIN's'%3A+%0D%0APO+Number%3A%0D%0ADescription+of+Vendor+Issue%3A%0D%0AResearch+conducted+to+date%3A+%0D%0AURL+for+SOP%3A+%0D%0ARecommendation+from+associate%3A+%0D%0A" target="_blank">
+									<font color="black"><span>  Invoice created but not submitted </span></font>
+							</a>
+							<br><br>
+							
+							<a href = "https://tt.amazon.com/new?ticket_type=Secure+Ticket&prev_qid=0&impact=5&cti-finder-type=keyword&category=Distribution+Center&type=DropShip+Website&item=Invoice&assigned_group=DirectFulfillment-Finance&assigned_individual=vendorexcellence-onduty&sensitive=on&country=India&bldg=HYD15&problem_location=Hyderabad%40%40%40HYD15+-+Corp+Office(Hyderabad)&case_type=Trouble+Ticket&quicklink_creator=mmandapa&short_description=%5Bcase+ID%5D%5BPayee+code%5D%5Bsubject%5D&details=Paragon+Case+ID%23%3A%0D%0AProduct+line+name%3A+%0D%0AVendor+Name%3A+%0D%0AVendor+Group+ID%3A+%0D%0AVendor's+Vendor+Central+Account+Name%3A%0D%0AName+of+Vendor+Manager+the+Vendor+has+been+working+with%3A+%0D%0AVendor+Code's'%3A%0D%0AASIN's'%3A+%0D%0APO+Number%3A%0D%0ADescription+of+Vendor+Issue%3A%0D%0AResearch+conducted+to+date%3A+%0D%0AURL+for+SOP%3A+%0D%0ARecommendation+from+associate%3A+%0D%0A" target="_blank">
+									<font color="black"><span>  Invoices not found in Fin-Ops </span></font>
+							</a>
+							<br><br>
+							
+							<a href = "https://tt.amazon.com/new?ticket_type=Secure+Ticket&prev_qid=0&impact=5&cti-finder-type=keyword&category=Distribution+Center&type=DropShip+Website&item=Invoice&assigned_group=DirectFulfillment-Finance&assigned_individual=vendorexcellence-onduty&sensitive=on&country=India&bldg=HYD15&problem_location=Hyderabad%40%40%40HYD15+-+Corp+Office(Hyderabad)&case_type=Trouble+Ticket&quicklink_creator=mmandapa&short_description=%5Bcase+ID%5D%5BPayee+code%5D%5Bsubject%5D&details=Paragon+Case+ID%23%3A%0D%0AProduct+line+name%3A+%0D%0AVendor+Name%3A+%0D%0AVendor+Group+ID%3A+%0D%0AVendor's+Vendor+Central+Account+Name%3A%0D%0AName+of+Vendor+Manager+the+Vendor+has+been+working+with+(If+any)%3A+%0D%0AVendor+Code's'%3A%0D%0AASIN's'(If+any)%3A+%0D%0APO+Number+(If+any)%3A%0D%0ADescription+of+Vendor+Issue%3A%0D%0AResearch+conducted+to+date%3A+%0D%0AURL+for+SOP+(If+any)%3A+%0D%0ARecommendation+from+associate%3A+%0D%0A" target="_blank">
+									<font color="black"><span>  Dropship invoice creation VE </span></font>
+							</a>
+							<br><br>
+							
+							<a href ="https://tt.amazon.com/new?ticket_type=Regular+Ticket&prev_qid=0&impact=5&cti-finder-type=keyword&category=VCM-esc-CA-Retail&type=Accounting&item=02.+invoice+created%2Fsubmitted+or+a+payment&assigned_group=CA-Retail-CE-Audio&assigned_individual=fordea&country=India&bldg=HYD10&problem_location=Hyderabad%40%40%40HYD10-CorpOffice(Hyd-Divyasree&case_type=Trouble+Ticket&quicklink_creator=mmandapa&short_description=%5Bcase+ID%5D%5BPayee+code%5D%5Bsubject%5D&details=Paragon+Case+ID%23%3A%0D%0AProduct+line+name%3A+%0D%0AVendor+Name%3A+%0D%0AVendor+Group+ID%3A+%0D%0AVendor's+Vendor+Central+Account+Name%3A%0D%0AName+of+Vendor+Manager+the+Vendor+has+been+working+with%3A+%0D%0AVendor+Code's'%3A%0D%0AASIN's'%3A+%0D%0APO+Number%3A%0D%0ADescription+of+Vendor+Issue%3A%0D%0AResearch+conducted+to+date%3A+%0D%0AURL+for+SOP%3A+%0D%0ARecommendation+from+associate%3A+%0D%0A" target="_blank">
+								<font color = "black"><span> CA -  To process Paper invoices </span></font>
+							</a>	
+							<br><br>
+							
+							<a href = "https://tt.amazon.com/new?ticket_type=Regular+Ticket&prev_qid=0&impact=4&priority=Low&cti-finder-type=keyword&category=VCM-esc-US-Hardlines&type=Accounting&item=I+have+query+on+Invoice+submitted+to+Amazon+or+Pay&assigned_group=US-Hardlines-Audio-Accessories&assigned_individual=abboeker&country=India&bldg=HYD10&problem_location=Hyderabad%40%40%40HYD10-CorpOffice(Hyd-Divyasree&case_type=Trouble+Ticket&quicklink_creator=psstella&short_description=Paper+invoicing+for+Dropship+&details=Assigned+group---%3E+change+according+to+the+category+of+the+vendor+" target="_blank">
+								<font color = "black"><span> US -  To process Paper invoices </span></font>
+							</a>	
+			
+			</section>
+						
+			<section id="section-flip-3"> <!-- Others -->
+						
+						<a href = "https://tt.amazon.com/new?ticket_type=Secure+Ticket&prev_qid=0&impact=5&cti-finder-type=keyword&category=Finance%2FHR%2FLegal&type=Vendor+Records&item=C2FO&assigned_group=AP-Vendor-Records-HYD&assigned_individual=ap-vendor-records-hyd-primary&country=India&bldg=HYD10&problem_location=Hyderabad%40%40%40HYD10-CorpOffice(Hyd-Divyasree&case_type=Trouble+Ticket&quicklink_creator=mmandapa&short_description=%5Bcase+ID%5D%5BPayee+code%5D%5Bsubject%5D&details=Paragon+Case+ID%23%3A%0D%0AProduct+line+name%3A+%0D%0AVendor+Name%3A+%0D%0AVendor+Group+ID%3A+%0D%0AVendor's+Vendor+Central+Account+Name%3A%0D%0AName+of+Vendor+Manager+the+Vendor+has+been+working+with%3A+%0D%0AVendor+Code's'%3A%0D%0AASIN's'%3A+%0D%0APO+Number%3A%0D%0ADescription+of+Vendor+Issue%3A%0D%0AResearch+conducted+to+date%3A+%0D%0AURL+for+SOP%3A+%0D%0ARecommendation+from+associate%3A+%0D%0A" target="_blank">
+								<font color="black"><span> Queries on C2FO program  </span></font>
+						</a>
+						<br><br>
+						
+						<a href = "https://tt.amazon.com/new?ticket_type=Secure+Ticket&prev_qid=0&impact=5&cti-finder-type=keyword&category=Extranet&type=Vendor+Central&item=CoOp+App&assigned_group=Finops-VendorPayments&assigned_individual=Finops-VendorPayments-Notify&sensitive=on&country=India&bldg=HYD10&problem_location=Hyderabad%40%40%40HYD10-CorpOffice(Hyd-Divyasree&case_type=Trouble+Ticket&quicklink_creator=mmandapa&short_description=%5Bcase+ID%5D%5BPayee+code%5D%5Bsubject%5D&details=Paragon+Case+ID%23%3A%0D%0AProduct+line+name%3A+%0D%0AVendor+Name%3A+%0D%0AVendor+Group+ID%3A+%0D%0AVendor's+Vendor+Central+Account+Name%3A%0D%0AName+of+Vendor+Manager+the+Vendor+has+been+working+with%3A+%0D%0AVendor+Code's'%3A%0D%0AASIN's'%3A+%0D%0APO+Number%3A%0D%0ADescription+of+Vendor+Issue%3A%0D%0AResearch+conducted+to+date%3A+%0D%0AURL+for+SOP%3A+%0D%0ARecommendation+from+associate%3A+%0D%0A" target="_blank">
+								<font color="black"><span>  CoOp Page shows error </span></font>
+						</a>
+						<br><br>
+						
+						<a href = "https://tt.amazon.com/new?ticket_type=Secure+Ticket&prev_qid=0&impact=5&cti-finder-type=keyword&category=Global+Accounts+Receivable&type=US+Customer+Maintenance&item=Party+Relationships&assigned_group=Customer+Maintenance&assigned_individual=bayyaram&sensitive=on&country=India&bldg=HYD15&problem_location=Hyderabad%40%40%40HYD15+-+Corp+Office(Hyderabad)&case_type=Trouble+Ticket&quicklink_creator=mmandapa&short_description=%5Bcase+ID%5D%5BPayee+code%5D%5Bsubject%5D&details=Vendor+Name%3A%0D%0ACoOp+Invoice+%23%3A%0D%0AOld+Mailing+Address+(To+be+removed)%0D%0ANew+Mailing+Address+(To+be+added)%0D%0AOld+Email+ID+(To+be+removed)%0D%0ANew+Email+ID+(To+be+added)%0D%0A%0D%0A" target="_blank">
+								<font color="black"><span> Any update to be made in CoOp Tool  </span></font>
+						</a>
+						<br><br>	
+						
+						<a href = "https://tt.amazon.com/new?ticket_type=Regular+Ticket&prev_qid=0&impact=3&priority=Low&cti-finder-type=keyword&category=Oracle+Financial+Applications&type=Accounts+Receivable-Invoicing&item=Billing+Import-Contra-CoGS&assigned_group=FT-Receivables-Billing&assigned_individual=ft-receivables-billing-primary&country=India&bldg=HYD10&problem_location=Hyderabad%40%40%40HYD10-CorpOffice(Hyd-Divyasree&case_type=Trouble+Ticket&quicklink_creator=mmandapa&short_description=Case+ID%3A+%3B&details=Nickname%3A%09%0D%0AEmail%3A%09%0D%0AVendor+code(s)%3A%09%0D%0AVendor+group+id%3A%09%0D%0AInventory+type(s)%3A%09%0D%0AVendor+type(s)%3A%09%0D%0ABusiness+name%3A%09.%0D%0AOFA+vendor+numbers%3A%09%0D%0APayee+codes%3A%09%0D%0ADescription%3A" target="_blank">
+								<font color="black"><span> Co-op missing invoice  </span></font>
+						</a>
+						<br><br>
+						
+						<a href = "https://tt.amazon.com/new?ticket_type=Regular+Ticket&prev_qid=0&impact=5&priority=Low&cti-finder-type=keyword&category=FinOps+Tech&type=Svayam&item=Archival+Issue&assigned_group=Trend-Support&assigned_individual=trend-primary-notify&country=India&bldg=HYD10&problem_location=Hyderabad%40%40%40HYD10-CorpOffice(Hyd-Divyasree&case_type=Trouble+Ticket&quicklink_creator=gundumo&short_description=Case+Id%3A+&details=%0D%0ACase+-+%0D%0ABusinessNickname%3A%0D%0AEmail%3A%09%0D%0AVendor+code(s)%3A%09%0D%0AVendor+group+id%3A%0D%0A%0D%0A%0D%0A" target="_blank">
+								<font color="black"><span> Svayam Backup  </span></font>
+						</a>						
+						<br><br>
+
+						<a href = "https://tt.amazon.com/new?ticket_type=Regular+Ticket&prev_qid=0&impact=5&cti-finder-type=keyword&category=Oracle+Financial+Applications&type=Accounts+Payable&item=Invoice+Related&assigned_group=FT-Payment-Request-Processing&assigned_individual=payment-processing-notify&country=India&bldg=HYD10&problem_location=Hyderabad%40%40%40HYD10-CorpOffice(Hyd-Divyasree&case_type=Trouble+Ticket&quicklink_creator=mmandapa&short_description=%5Bcase+ID%5D%5BPayee+code%5D%5Bsubject%5D&details=Paragon+Case+ID%23%3A%0D%0AProduct+line+name%3A+%0D%0AVendor+Name%3A+%0D%0AVendor+Group+ID%3A+%0D%0AVendor's+Vendor+Central+Account+Name%3A%0D%0AName+of+Vendor+Manager+the+Vendor+has+been+working+with%3A+%0D%0AVendor+Code's'%3A%0D%0AASIN's'%3A+%0D%0APO+Number%3A%0D%0ADescription+of+Vendor+Issue%3A%0D%0AResearch+conducted+to+date%3A+%0D%0AURL+for+SOP%3A+%0D%0ARecommendation+from+associate%3A+" target="_blank">
+							<font color = "black"> Invoice POSTED in FOC but not in OFA</font>
+						</a>	
+			</section>
+
+			<section id="section-flip-4"> <!-- Urgent -->
+						
+						<a href = "https://tt.amazon.com/new?ticket_type=Regular+Ticket&prev_qid=0&impact=3&cti-finder-type=keyword&category=Global+Accounts+Payables&type=Retail+Inventory+-+North+America&item=Vendor+Threat+of+Shipment+Hold&assigned_group=NASSCM&assigned_individual=yuma-hyd-escalations&country=India&bldg=HYD10&problem_location=Hyderabad%40%40%40HYD10-CorpOffice(Hyd-Divyasree&case_type=Trouble+Ticket&quicklink_creator=gundumo&short_description=%5Bcase+ID%5D%5BPayee+code%5D%5Bsubject%5D&details=Paragon+Case+ID%23%3A%0D%0AProduct+line+name%3A+%0D%0AVendor+Name%3A+%0D%0AVendor+Group+ID%3A+%0D%0AVendor's+Vendor+Central+Account+Name%3A%0D%0AName+of+Vendor+Manager+the+Vendor+has+been+working+with%3A+%0D%0AVendor+Code's'%3A%0D%0AASIN's'%3A+%0D%0APO+Number%3A%0D%0ADescription+of+Vendor+Issue%3A%0D%0AResearch+conducted+to+date%3A+%0D%0AURL+for+SOP%3A+%0D%0ARecommendation+from+the+associate%3A" target="_blank">
+								<font color="black"><span>  Threat for shipment hold </span></font>
+						</a>
+						<br><br>	
+						
+						<a href = "https://tt.amazon.com/new?ticket_type=Regular+Ticket&prev_qid=Q000021387&impact=5&cti-finder-type=keyword&category=Global+Accounts+Payables&type=Retail+Inventory+-+North+America&item=General+AP+Inquiry&assigned_group=NA-General+AP+Inquries&assigned_individual=venkd&country=United+States&bldg=SEA33&problem_location=Seattle%40%40%40SEA33+-+Blackfoot&case_type=Trouble+Ticket&quicklink_creator=mmandapa&add_perm='wendie'&short_description=General+AP+Inquiry%3A+xxx&details=Vendor+Central+Case%23%2C+if+applicable%3A+%0D%0A%0D%0AVendor+Name%2C+if+applicable%3A%0D%0A%0D%0AVendor+Code%2C+if+applicable%3A%0D%0A%0D%0AProduct+line%2C+if+applicable%3A%0D%0A%0D%0AVendor+Contact+Information%2C+if+applicable%3A%0D%0A%0D%0ADetails+of+the+Inquiry+(Please+attach+emails%2C+if+applicable)%3A%0D%0A" target="_blank">
+								<font color="black"><span> Early payment request   </span></font>
+						</a>
+						
+			</section>
+						
+			<section id="section-flip-5"> <!-- Returns & Provisions -->
+						<a href = "https://tt.amazon.com/new?ticket_type=Secure+Ticket&prev_qid=0&impact=5&cti-finder-type=keyword&category=VCM-esc-US-Hardlines&type=Accounting&item=I+have+query+on+Provision+for+Receivable+or+missin&assigned_group=US-Hardlines-Audio-Accessories&assigned_individual=abboeker&sensitive=on&country=India&bldg=HYD15&problem_location=Hyderabad%40%40%40HYD15+-+Corp+Office(Hyderabad)&case_type=Trouble+Ticket&quicklink_creator=mmandapa&short_description=%5Bcase+ID%5D%5BPayee+code%5D%5Bsubject%5D&details=Paragon+Case+ID%23%3A%0D%0AProduct+line+name%3A+%0D%0AVendor+Name%3A+%0D%0AVendor+Group+ID%3A+%0D%0AVendor's+Vendor+Central+Account+Name%3A%0D%0AName+of+Vendor+Manager+the+Vendor+has+been+working+with+(If+any)%3A+%0D%0AVendor+Code's'%3A%0D%0AASIN's'(If+any)%3A+%0D%0APO+Number+(If+any)%3A%0D%0ADescription+of+Vendor+Issue%3A%0D%0AResearch+conducted+to+date%3A+%0D%0AURL+for+SOP+(If+any)%3A+%0D%0ARecommendation+from+associate%3A+%0D%0A" target="_blank">
+								<font color="black"><span>  Query on provision for receivables </span></font>
+						</a>
+						<br><br>
+						
+						<a href = "https://tt.amazon.com/new?ticket_type=Secure+Ticket&prev_qid=0&impact=5&cti-finder-type=keyword&category=Global+Accounts+Receivable&type=Vendor+Hold+Backs+-+US&item=Reversal+Request&assigned_group=Vendor+Holdbacks+-+HYD&assigned_individual=arshiya&sensitive=on&country=India&bldg=HYD15&problem_location=Hyderabad%40%40%40HYD15+-+Corp+Office(Hyderabad)&case_type=Trouble+Ticket&quicklink_creator=mmandapa&short_description=%5Bcase+ID%5D%5BPayee+code%5D%5Bsubject%5D&details=Paragon+Case+ID%23%3A%0D%0AProduct+line+name%3A+%0D%0AVendor+Name%3A+%0D%0AVendor+Group+ID%3A+%0D%0AVendor's+Vendor+Central+Account+Name%3A%0D%0AName+of+Vendor+Manager+the+Vendor+has+been+working+with+(If+any)%3A+%0D%0AVendor+Code's'%3A%0D%0AASIN's'(If+any)%3A+%0D%0APO+Number+(If+any)%3A%0D%0ADescription+of+Vendor+Issue%3A%0D%0AResearch+conducted+to+date%3A+%0D%0AURL+for+SOP+(If+any)%3A+%0D%0ARecommendation+from+associate%3A+%0D%0A" target="_blank">
+								<font color="black"><span>  Provision Reversal </span></font>
+						</a>
+						<br><br>
+						
+						<a href = "https://tt.amazon.com/new?ticket_type=Secure+Ticket&prev_qid=0&impact=5&cti-finder-type=keyword&category=VCM-esc-US-Hardlines&type=Accounting&item=I+would+like+to+dispute+a+VRET+or+CoOp+charge&assigned_group=US-Hardlines-Audio-Accessories&assigned_individual=abboeker&sensitive=on&country=India&bldg=HYD15&problem_location=Hyderabad%40%40%40HYD15+-+Corp+Office(Hyderabad)&case_type=Trouble+Ticket&quicklink_creator=mmandapa&short_description=%5Bcase+ID%5D%5BPayee+code%5D%5Bsubject%5D&details=Paragon+Case+ID%23%3A%0D%0AProduct+line+name%3A+%0D%0AVendor+Name%3A+%0D%0AVendor+Group+ID%3A+%0D%0AVendor's+Vendor+Central+Account+Name%3A%0D%0AName+of+Vendor+Manager+the+Vendor+has+been+working+with+(If+any)%3A+%0D%0AVendor+Code's'%3A%0D%0AASIN's'(If+any)%3A+%0D%0APO+Number+(If+any)%3A%0D%0ADescription+of+Vendor+Issue%3A%0D%0AResearch+conducted+to+date%3A+%0D%0AURL+for+SOP+(If+any)%3A+%0D%0ARecommendation+from+associate%3A+%0D%0A" target="_blank">
+								<font color="black">	<span>  Dispute a VRET or CoOp charge </span> </font>
+						</a>
+						
+			</section> 
+						
+						<!-- <section id="section-flip-6"><p>PO</p></section>  -->
+						<!-- <section id="section-flip-7"><p>Tech Issue</p></section>  -->
+						
+						
+					</div><!-- /content -->
+					
+				</div><!-- tabs -->
+			
+			</section>			
+
+		</div><!-- /container -->
+		
+		
+		<div>
+				<h3 style = "position: fixed;  bottom: 0; right: 1; right: 20px;"><font color="black">Created by Mrinal (mmandapa) & Surya (gundumo) </font></h3> 
+		</div>
+		
+		 
+		<script><!-- src="js/cbpFWTabs.js"-->
+		/**
+ * cbpFWTabs.js v1.0.0
+ * http://www.codrops.com
+ *
+ * Licensed under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ * 
+ * Copyright 2014, Codrops
+ * http://www.codrops.com
+ */
+;( function( window ) {
+	
+	'use strict';
+
+	function extend( a, b ) {
+		for( var key in b ) { 
+			if( b.hasOwnProperty( key ) ) {
+				a[key] = b[key];
+			}
+		}
+		return a;
+	}
+
+	function CBPFWTabs( el, options ) {
+		this.el = el;
+		this.options = extend( {}, this.options );
+  		extend( this.options, options );
+  		this._init();
+	}
+
+	CBPFWTabs.prototype.options = {
+		start : 0
+	};
+
+	CBPFWTabs.prototype._init = function() {
+		// tabs elems
+		this.tabs = [].slice.call( this.el.querySelectorAll( 'nav > ul > li' ) );
+		// content items
+		this.items = [].slice.call( this.el.querySelectorAll( '.content-wrap > section' ) );
+		// current index
+		this.current = -1;
+		// show current content item
+		this._show();
+		// init events
+		this._initEvents();
+	};
+
+	CBPFWTabs.prototype._initEvents = function() {
+		var self = this;
+		this.tabs.forEach( function( tab, idx ) {
+			tab.addEventListener( 'click', function( ev ) {
+				ev.preventDefault();
+				self._show( idx );
+			} );
+		} );
+	};
+
+	CBPFWTabs.prototype._show = function( idx ) {
+		if( this.current >= 0 ) {
+			this.tabs[ this.current ].className = this.items[ this.current ].className = '';
+		}
+		// change current
+		this.current = idx != undefined ? idx : this.options.start >= 0 && this.options.start < this.items.length ? this.options.start : 0;
+		this.tabs[ this.current ].className = 'tab-current';
+		this.items[ this.current ].className = 'content-current';
+	};
+
+	// add to global namespace
+	window.CBPFWTabs = CBPFWTabs;
+
+})( window );
+		
+		</script>
+		<script>
+			(function() {
+
+				[].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+					new CBPFWTabs( el );
+				});
+
+			})();
+		</script>
+	</body>
+	
+	
+</html>
